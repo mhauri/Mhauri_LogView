@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_logview_index>
+        <reference name="content">
+            <block type="logview/adminhtml_list" name="logview_list" template="logview/list.phtml" />
+        </reference>
+    </adminhtml_logview_index>
+    <adminhtml_logview_view>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>logview/logview.css</name>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="logview/adminhtml_view" name="logview_view" template="logview/view.phtml" />
+        </reference>
+    </adminhtml_logview_view>
+</layout>

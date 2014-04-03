@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright (c) 2014, Marcel Hauri
+* All rights reserved.
+*
+* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+* AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+* ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+* LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+* CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+* SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+* INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+* CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+* ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+* POSSIBILITY OF SUCH DAMAGE.
+*
+* @copyright Copyright 2014, Marcel Hauri (https://github.com/mhauri/Mhauri_LogView/)
+*
+* @category Logging
+* @package Mhauri_LogView
+* @author Marcel Hauri <marcel@hauri.me>
+*/
+-->
+<config>
+    <menu>
+        <logview translate="title" module="logview">
+            <title>Logfiles</title>
+            <sort_order>99</sort_order>
+            <children>
+                <list translate="title">
+                    <title>Logfiles</title>
+                    <action>adminhtml/logview/index</action>
+                    <sort_order>0</sort_order>
+                </list>
+            </children>
+        </logview>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <logview translate="title" module="logview">
+                        <title>Logfiles</title>
+                        <sort_order>99</sort_order>
+                        <children>
+                            <list translate="title">
+                                <title>Logfiles</title>
+                                <sort_order>0</sort_order>
+                            </list>
+                            <view translate="title">
+                                <title>Logfiles</title>
+                                <sort_order>0</sort_order>
+                            </view>
+                        </children>
+                    </logview>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
+

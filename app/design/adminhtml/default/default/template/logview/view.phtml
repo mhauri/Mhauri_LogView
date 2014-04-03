@@ -1,0 +1,33 @@
+<div class="content-header">
+    <h3><?php echo $this->helper('logview')->__('File: %s', $this->getLogName()); ?></h3>
+    <div class="content-buttons-placeholder">
+        <p class="content-buttons form-buttons">
+            <?php
+            $backUrl = $url = Mage::helper("adminhtml")->getUrl("*/*/index");
+            ?>
+            <button href="#" title="Back" type="button" class="scalable back" onclick="setLocation('<?php echo $backUrl; ?>')"><span><span><span>Back</span></span></span></button>
+        </p>
+    </div>
+</div>
+<?php if($this->isLogFileExisting()): ?>
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->helper('logview')->__('Content'); ?></h4>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="hor-scroll">
+            <table cellspacing="0" class="data">
+                <tbody>
+                <tr class="odd">
+                    <td class="console-container">
+                        <textarea readonly id="console"><?php echo $this->getLogContent(); ?></textarea>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<?php else: ?>
+    <h3><?php echo $this->helper('logview')->__('Logfile does not exist!'); ?></h3>
+<?php endif; ?>

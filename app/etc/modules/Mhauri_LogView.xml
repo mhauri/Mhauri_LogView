@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mhauri_LogView>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mhauri_LogView>
+    </modules>
+</config>

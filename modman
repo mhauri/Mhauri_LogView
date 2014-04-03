@@ -1,0 +1,5 @@
+app/etc/modules/Mhauri_LogView.xml                        app/etc/modules/Mhauri_LogView.xml
+app/code/local/Mhauri/LogView                             app/code/local/Mhauri/LogView
+app/design/adminhtml/default/default/layout/logview.xml   app/design/adminhtml/default/default/layout/logview.xml
+app/design/adminhtml/default/default/template/logview     app/design/adminhtml/default/default/template/logview
+skin/adminhtml/default/default/logview                    skin/adminhtml/default/default/logview

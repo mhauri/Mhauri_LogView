@@ -1,0 +1,56 @@
+<div class="content-header">
+    <h3><?php echo $this->helper('logview')->__('Logfiles'); ?></h3>
+</div>
+
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->helper('logview')->__('Overview'); ?></h4>
+    </div>
+</div>
+<div class="grid">
+    <div class="hor-scroll">
+
+        <table cellspacing="0" class="data">
+            <thead>
+            <tr class="headings">
+                <th><?php echo $this->helper('logview')->__('Name'); ?></th>
+                <th><?php echo $this->helper('logview')->__('Filesize'); ?></th>
+                <th><?php echo $this->helper('logview')->__('Last updated'); ?></th>
+                <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php $not_readable = 0; ?>
+            <?php foreach($this->getLogFiles() as $key => $data): ?>
+                <?php
+                $class = 'even';
+                if ($key % 2 == 0) {
+                    $class = 'odd';
+                }
+                $url = Mage::helper("adminhtml")->getUrl("*/*/view/log/" . $data['id']);
+                ?>
+                <tr class="<?php echo $class; ?>">
+                    <?php if($data['readable']): ?>
+                        <td><a href="<?php echo $url; ?>"><?php echo $data['name'] ?></a></td>
+                    <?php else: ?>
+                        <td><?php echo $data['name'] ?>*</td>
+                        <?php $not_readable++; ?>
+                    <?php endif; ?>
+                    <td><?php echo $data['filesize_human']; ?></td>
+                    <td><?php echo $data['changed_human']; ?></td>
+                    <?php if($data['readable']): ?>
+                        <td><a href="<?php echo $url; ?>"><?php echo $this->helper('logview')->__('View'); ?></a></td>
+                    <?php else: ?>
+                        <td>&nbsp;</td>
+                    <?php endif; ?>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+        <?php if($not_readable !== 0): ?>
+        <p>* <?php echo $this->helper('logview')->__('Not readable!'); ?></p>
+        <?php endif; ?>
+    </div>
+</div>
+</div>
+<?php echo $this->getChildHtml('log_item'); ?>
