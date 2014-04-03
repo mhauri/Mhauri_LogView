@@ -57,7 +57,7 @@ class Mhauri_LogView_Block_Adminhtml_List extends Mage_Core_Block_Template
     }
 
     /**
-     * Returns human readable filesize
+     * Returns human readable file size
      *
      * @param $file
      * @return string

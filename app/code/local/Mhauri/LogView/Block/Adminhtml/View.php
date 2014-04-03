@@ -30,21 +30,36 @@ class Mhauri_LogView_Block_Adminhtml_View extends Mage_Core_Block_Template
         $this->setTemplate('logview/view.phtml');
     }
 
+    /**
+     * Get the name of the logfile based on the parameter
+     *
+     * @return string
+     */
     protected function getLogName()
     {
         return $this->getRequest()->getParam('log') . Mhauri_LogView_Helper_Data::LOG_FILE_DEFAULT_ENDING;
     }
 
+    /**
+     * Returns the content of the logfile if it exists
+     *
+     * @return bool
+     */
     protected function getLogContent()
     {
         $lines = ($this->getRequest()->getParam('limit')) ? intval($this->getRequest()->getParam('limit')) : Mhauri_LogView_Helper_Data::LOG_FILE_DEFAULT_LINES;
 
         if($file = $this->isLogFileExisting()) {
-            return html_entity_decode(passthru("tail -n " . $lines . " " . $file));
+            passthru("tail -n " . $lines . " " . $file);
         }
         return false;
     }
 
+    /**
+     * Checks if the requested logfile exists and returns the file path
+     *
+     * @return bool|string
+     */
     protected function isLogFileExisting()
     {
         $logPath = Mage::getBaseDir('log');
@@ -53,10 +68,4 @@ class Mhauri_LogView_Block_Adminhtml_View extends Mage_Core_Block_Template
         }
         return false;
     }
-
-    protected function getFileOwner($file)
-    {
-        print_r(posix_getpwuid(fileowner($file)));
-    }
-
 }
