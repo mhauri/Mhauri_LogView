@@ -2,7 +2,7 @@ Mhauri_LogView
 ==============
 
 This extension allows you to read the logfiles stored in Magento's /var/log directory directly in the admin backend. 
-So you don't need to terminal access to your Magento installation.
+So you don't need terminal access to your Magento installation.
 
 Donation
 ========
