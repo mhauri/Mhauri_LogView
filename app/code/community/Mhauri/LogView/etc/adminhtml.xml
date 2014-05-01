@@ -25,36 +25,38 @@
 -->
 <config>
     <menu>
-        <logview translate="title" module="logview">
-            <title>Logfiles</title>
-            <sort_order>99</sort_order>
+        <system>
             <children>
-                <list translate="title">
-                    <title>Logfiles</title>
+                <logview translate="title" module="logview">
+                    <title>View Logfiles</title>
+                    <sort_order>999</sort_order>
                     <action>adminhtml/logview/index</action>
-                    <sort_order>0</sort_order>
-                </list>
+                </logview>
             </children>
-        </logview>
+        </system>
     </menu>
     <acl>
         <resources>
             <admin>
                 <children>
-                    <logview translate="title" module="logview">
-                        <title>Logfiles</title>
-                        <sort_order>99</sort_order>
+                    <system>
                         <children>
-                            <list translate="title">
+                            <logview translate="title" module="logview">
                                 <title>Logfiles</title>
-                                <sort_order>0</sort_order>
-                            </list>
-                            <view translate="title">
-                                <title>Logfiles</title>
-                                <sort_order>0</sort_order>
-                            </view>
+                                <sort_order>99</sort_order>
+                                <children>
+                                    <list translate="title">
+                                        <title>List Logfiles</title>
+                                        <sort_order>0</sort_order>
+                                    </list>
+                                    <view translate="title">
+                                        <title>View Logfiles</title>
+                                        <sort_order>0</sort_order>
+                                    </view>
+                                </children>
+                            </logview>
                         </children>
-                    </logview>
+                    </system>
                 </children>
             </admin>
         </resources>
